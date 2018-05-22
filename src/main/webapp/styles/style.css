@@ -1,0 +1,75 @@
+﻿@charset "utf-8";
+
+/*common css*/
+*{ padding:0; margin:0; border: none;}
+body{ font-size:12px; background-image:url(../images/wrap_bg.jpg); background-repeat:repeat;}
+a{ text-decoration:none; noFocusLine:expression(this.onFocus = this.blur()); color:#fdb303;}
+a:focus{outline:none; color:#fdb303;}
+a:hover{ color:#FFF; text-decoration:none;}
+ul{list-style-type:none;}
+li{ list-style:none;}
+
+.clear{ clear:both;}
+.w955{ width:955px; margin:0 auto;}
+.box{ width:955px; float:left;}
+
+/*head*/
+.head{ width:100%; float:left; height:130px; background-image:url(../images/topbg_02.jpg); background-repeat:repeat-x;}
+.logo{ width:955px; height:130px; float:left; background-image:url(../images/logo.jpg);}
+.r_save{ float:right; color:#fdb303; padding-top:40px; display:inline; padding-right:15px;}
+
+/*banner&nav*/
+.nav_banner{ width:100%; height:415px; float:left; background-image:url(../images/i_03.jpg); background-repeat:repeat-x;}
+.nav_left{ float:left; height:40px;} 
+.nav_left a{ float:left;  display:block; width:100px;  height:38px; line-height:38px; font-family: 微软雅黑,Arial, Helvetica, sans-serif; font-size:14px; color:#350400; }
+.nav_left a:hover{ color:#993300;}
+.new_right{ float:right; height:38px; line-height:38px;  color:#960201;}
+.jiazhi{ width:865px; height:32px; float:left; background-image:url(../images/i_06-05.jpg); background-repeat:no-repeat; color:#eb9417; padding-left:90px; display:inline; line-height:32px; vertical-align:middle;}
+
+.small_flash{ width:263px; height:158px; float:left; padding:7px; display:inline; border:solid 1px #851d00;}
+.about{ float:left; padding-top:20px; display:inline; width:100%;}
+.about_us{ width:309px; height:125px; float:left; background-image:url(../images/i_12.jpg.jpg); background-repeat:no-repeat; background-position:left top; margin-left:25px; display:inline; color:#f7a30c; line-height:24px; padding:65px 22px 0px 22px;}
+.coontact{ width:253px; height:112px; float:left; background-image:url(../images/i_14.jpg); background-repeat:no-repeat; margin-left:25px; display:inline; font-size:12px; font-weight:bold; color:#fff; padding-top:70px; padding-left:20px; line-height:24px;}
+.product_top{ width:955px; height:40px; float:left;}
+.product{ width:955px; height:345px; float:left; background-image:url(../images/pbg.jpg); margin-top:5px; display:inline;}
+.product_list{ width:600px; height:22px; float:left; margin-left:200px; padding-top:17px; display:inline;}
+.product_list ul li{ display:inline; float:left; margin-right:10px;}
+.more{ width:50px; float:right; text-align:left;height:22px;padding-top:22px; display:inline;}
+.product_img{ width:955px; float:left; height:200px; margin-top:25px;}
+.r_left{ width:16px; float:left; margin-left:10px; height:20px; line-height:20px; vertical-align:middle; margin-top:100px; display:inline;}
+.r_right{width:16px; float:left;  height:20px; line-height:20px; vertical-align:middle; margin-top:100px; display:inline;}
+.product_img_list{ width:900px; float:left; height:200px;}
+.product_img_list ul li{ width:200px; height:200px; float:left;  text-align:center; margin:0px 12px; display:inline;}
+.product_name{ width:201px; height:30px; line-height:30px; vertical-align:middle; font-size:14px; color:#f7a30c; background-color:#800404;}
+.product_name_img{ width:187px; height:174px; border:solid 7px #800404; float:left; margin-top:15px; display:inline; valign:middle; vertical-align:middle; display:tablecell;}
+.product_name_img img{valign:middle; vertical-align:middle; display:tablecell;}
+.footer{ width:100%; float:left; background-color:#350400; height:87px;}
+.foot{ width:955px; line-height:24px; color:#eb9417; text-align:center; padding-top:20px;}
+
+/*内页代码*/
+.ab_left{ width:273px; float:left; margin-bottom:20px; display:inline;}
+.about_list{width:273px; float:left;}
+.about_list_top{ width:273px; height:17px; float:left; background-image:url(../images/abgtop.jpg); background-repeat:repeat;}
+.about_list_buttom{ width:273px; height:17px; float:left; background-image:url(../images/abgbuttom.jpg); background-repeat:repeat;}
+.about_list_middle_product{ width:263px; float:left; padding:0px 5px;}
+.about_list_middle_product ul{ border: solid 1px #aa4b11; float:left; border-bottom:0px; border-top:0px; width:259px; margin-left:1px;}
+.about_list_middle_product ul li{ font-size:14px; font-weight:bold; color:#fff; line-height:30px; height:30px; border-bottom:dashed 1px #c84720; text-align:center; width:225px; float:left; margin-left:16px; padding-top:10px;}
+.coontact_about{width:273px; height:182px; float:left; background-image:url(../images/i_14.jpg); background-repeat:no-repeat;  display:inline; margin-top:20px;font-size:12px; font-weight:bold; color:#fff; padding-top:70px; padding-left:20px; line-height:24px;}
+.ab_right{ width:655px; float:right; border:solid 1px #aa4b11; margin-top:10px; margin-bottom:20px; display:inline;}
+.position{ width:300px; height:40px; line-height:40px; background-image:url(../images/positionbg.jpg); background-repeat:no-repeat; color:#cf890b; font-size:14px; font-weight:bold; padding-left:40px; float:left;}
+.path{ width:300px; float:left; text-align:right; padding-right:10px; display:inline; font-size:12px; color:#eb9417; height:40px; line-height:40px;}
+.about_content{ float:left; padding:15px; font-size:14px; color:#eb9417; line-height:200%;}
+
+/*产品展示页图片样式*/
+.pt_li{ float:left; border:solid 1px #8b2500; padding:5px; margin:10px 10px 10px 10px;}
+.pt_li img{ border:solid 2px #990000;}
+.pt_li a:hover img{ border:solid 2px #ffa811;}
+.page{ width:610px; float:right; text-align:right; padding-right:40px;}
+.page a{ padding: 0px 5px;}
+
+/*新闻列表*/
+.new_list{ width:630px; float:left; padding-bottom:10px;}
+.new_list li{ width:615px; height:30px; float:left; border-bottom:dashed 1px #8b2500; background-image:url(../images/ListPlaying.png); background-repeat:no-repeat; background-position:left center; padding-left:15px; display:inline;}
+.new_list li a{ width:415px; float:left; text-align:left; color:#c98100;}
+.new_list li a:hover{ color:#fff;}
+.new_list li span{ width:200px; float:left; text-align:right;}

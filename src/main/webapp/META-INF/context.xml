@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context reloadable="true" crossContext="true">
+	<Resource name="jdbc/MuBian" 
+	auth="Container" 
+	type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver" 
+		url="jdbc:mysql://localhost:3306/mubian?autoReconnect=true"
+		maxActive="50" 
+		maxldle="8" 
+		maxWait="500" username="root" password="greatwqs" />
+</Context>

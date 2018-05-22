@@ -1,0 +1,16 @@
+
+源码改动记录:
+
+1. 分类图片显示样式改变,不同的产品类别用不同的宽度和高度; OK;
+2. logo图修改;
+3. 主页下面4张图显示的样式修改,不同的图片用不同的高度和宽度;OK;
+4. 类别全部更换从文字换成图片
+5. 四方字体改变;
+6. 不能添加新闻;
+
+2013-05-20 final version!
+2013-05-29 final version!
+2013-06-03 final version for final 4 update!
+2013-07-22 final version for 6 update!
+
+greatwqs

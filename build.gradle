@@ -1,0 +1,82 @@
+// builg.gradle for java web by greatwqs
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'war'
+
+group = "com.greatwqs.mubian"
+version = "1.0-SNAPSHOT"
+sourceCompatibility = 1.7
+
+eclipse.classpath.defaultOutputDir = file('src/main/webapp/WEB-INF/classes')
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+sourceSets.main.resources.srcDir 'src/main/resources'
+sourceSets.test.resources.srcDir 'src/test/resources'
+sourceSets.main.java.srcDir 'src/main/java'
+sourceSets.test.java.srcDir 'src/test/java'
+ 
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+   mavenLocal()
+   maven {
+      credentials {
+         username 'admin'
+         password 'yunyao@nexus4support'
+      }
+      url "http://120.26.127.211:8081/nexus/content/groups/public/"
+   }
+   mavenCentral()
+}
+
+// 上传至中央仓库
+uploadArchives {
+   repositories {
+      mavenDeployer {
+         mavenLocal()
+      }
+   }
+}
+
+dependencies {
+   compile "org.slf4j:slf4j-log4j12:1.7.12"
+   compile "com.google.guava:guava:18.0"
+   compile "sslext:sslext:1.10-4"
+   compile "org.json:json:20140107"
+   compile "commons-beanutils:commons-beanutils:1.7.0"
+   compile "com.google.code.gson:gson:2.2.4"
+   compile "org.jsoup:jsoup:1.7.3"
+   compile "org.apache.httpcomponents:httpclient:4.5.1"
+   compile "org.apache.httpcomponents:httpclient-cache:4.5.1"
+   compile "commons-httpclient:commons-httpclient:3.0.1"
+   compile "dom4j:dom4j:1.6.1"
+   compile "org.apache.commons:commons-lang3:3.3.2"
+   compile "com.google.guava:guava:18.0"
+   compile "redis.clients:jedis:2.7.2"
+   compile "joda-time:joda-time:2.7"
+   compile "com.thoughtworks.xstream:xstream:1.4.8"
+   compile "xpp3:xpp3:1.1.4c"
+   compile "xmlpull:xmlpull:1.1.3.1"
+   compile "commons-codec:commons-codec:1.10"
+   compile "commons-logging:commons-logging:1.1.3"
+   compile "commons-fileupload:commons-fileupload:1.3.3"
+   compile fileTree(dir: 'libs', include: '*.jar')
+   //系统提供的依赖
+   providedCompile(
+      "javax.servlet:javax.servlet-api:3.1.0",
+      "javax.servlet.jsp:jsp-api:2.2.1-b03",
+      "javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1"
+   )
+}
+
+// 导出项目中所有的jar到exported-libs目录, 用于部署时配置libs
+task copyJars(type: Copy) {
+   from configurations.runtime
+   into 'exported-libs'
+}
+
+// 创建maven风格的项目目录;
+task "create-project-dirs" << {
+   sourceSets*.java.srcDirs*.each { it.mkdirs() }
+   sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+}

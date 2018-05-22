@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<description>jiangchao mubian website</description>
+	<display-name>mubian</display-name>
+	
+	<!-- 主页Ajax刷新配置 -->
+	<servlet>
+		<servlet-name>IndexAjaxServlet</servlet-name>
+		<servlet-class>com.greatwqs.mubian.servlet.IndexAjaxServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>IndexAjaxServlet</servlet-name>
+		<url-pattern>/indexAjax.html</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 关于我们配置 -->
+	<servlet> 
+		<servlet-name>AboutCompanyBusServlet</servlet-name>
+		<servlet-class>com.greatwqs.mubian.servlet.AboutCompanyBusServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AboutCompanyBusServlet</servlet-name>
+		<url-pattern>/ourBusiness.html</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AboutCompanyInfoServlet</servlet-name>
+		<servlet-class>com.greatwqs.mubian.servlet.AboutCompanyInfoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AboutCompanyInfoServlet</servlet-name>
+		<url-pattern>/ourCompanyInfo.html</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AboutContactUsServlet</servlet-name>
+		<servlet-class>com.greatwqs.mubian.servlet.AboutContactUsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AboutContactUsServlet</servlet-name>
+		<url-pattern>/contactUs.html</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AboutPartnersServlet</servlet-name>
+		<servlet-class>com.greatwqs.mubian.servlet.AboutPartnersServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AboutPartnersServlet</servlet-name>
+		<url-pattern>/partners.html</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 新闻展示配置 -->
+	<servlet>
+		<servlet-name>ListNewsServlet</servlet-name>
+		<servlet-class>com.greatwqs.mubian.servlet.ListNewsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListNewsServlet</servlet-name>
+		<url-pattern>/listNews.html</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>DetailNewsServlet</servlet-name>
+		<servlet-class>com.greatwqs.mubian.servlet.DetailNewsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DetailNewsServlet</servlet-name>
+		<url-pattern>/detailNews.html</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 产品展示配置 -->
+	<servlet>
+		<servlet-name>ListProductsServlet</servlet-name>
+		<servlet-class>com.greatwqs.mubian.servlet.ListProductsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListProductsServlet</servlet-name>
+		<url-pattern>/listProducts.html</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>DetailProductServlet</servlet-name>
+		<servlet-class>com.greatwqs.mubian.servlet.DetailProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DetailProductServlet</servlet-name>
+		<url-pattern>/detailProduct.html</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 管理员配置 -->
+	<servlet>
+		<servlet-name>ValidateImgServlet</servlet-name>
+		<servlet-class>com.greatwqs.mubian.servlet.ValidateImgServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ValidateImgServlet</servlet-name>
+		<url-pattern>/getValidateImage</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AdminLoginServlet</servlet-name>
+		<servlet-class>com.greatwqs.mubian.servlet.admin.AdminLoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminLoginServlet</servlet-name>
+		<url-pattern>/admin/login.html</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AdminHomeServlet</servlet-name>
+		<servlet-class>com.greatwqs.mubian.servlet.admin.AdminHomeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminHomeServlet</servlet-name>
+		<url-pattern>/admin/index.html</url-pattern>
+	</servlet-mapping>
+		<servlet-mapping>
+		<servlet-name>AdminHomeServlet</servlet-name>
+		<url-pattern>/admin/</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 管理员操作: 注销,修改管理员密码 -->
+	<servlet>
+		<servlet-name>AdminActionServlet</servlet-name>
+		<servlet-class>com.greatwqs.mubian.servlet.admin.AdminActionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminActionServlet</servlet-name>
+		<url-pattern>/admin/action.html</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 管理员上传图片: 添加产品 -->
+	<servlet>
+		<servlet-name>AdminAddProductServlet</servlet-name>
+		<servlet-class>com.greatwqs.mubian.servlet.admin.AdminAddProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminAddProductServlet</servlet-name>
+		<url-pattern>/admin/addProduct.html</url-pattern>
+	</servlet-mapping>
+
+	<!-- FCKEditor -->
+	<servlet>
+		<servlet-name>ConnectorServlet</servlet-name>
+		<servlet-class>
+			net.fckeditor.connector.ConnectorServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ConnectorServlet</servlet-name>
+		<!-- Do not wrap this line otherwise Glassfish will fail to load this file -->
+		<url-pattern>/fckeditor/editor/filemanager/connectors/*</url-pattern>
+	</servlet-mapping>
+	
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+</web-app>
