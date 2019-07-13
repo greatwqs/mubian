@@ -9,7 +9,7 @@ public class Md5CodeTest {
 	 */
 	public static void main(String[] args) {
 		MD5Utils md5 = new MD5Utils();
-		String password = "sifang@2013";
+		String password = "greatwqs";
 		String encodePassword = md5.getMD5(password);
 		System.out.println(encodePassword);
 	}
