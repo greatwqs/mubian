@@ -24,8 +24,14 @@ public class MySqlConnection {
     	if(connection==null){
     		try {
     			Class.forName("com.mysql.jdbc.Driver").newInstance();
-    			Connection connection = java.sql.DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mubian", 
-    					"root", "greatwqs");
+    			
+    			
+    			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+    			Connection connection = java.sql.DriverManager.getConnection(
+    					"jdbc:mysql://127.0.0.1:3306/mubian", 
+    					"root",
+    					"greatwqs");
+    			
                 return connection;
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -72,5 +78,7 @@ public class MySqlConnection {
     }
     
     public static void main(String[] fds){
+    	MySqlConnection mysql = new MySqlConnection();
+    	mysql.getConnection();
     }
 }
