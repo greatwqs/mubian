@@ -8,10 +8,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
-
 /**
  *
  * @author greatwqs
@@ -24,12 +20,12 @@ public class MySqlConnection {
 	 * get mysql Connection
 	 * @return
 	 */
-    public Connection getConnectionJndi() {
+    public Connection getConnection() {
     	if(connection==null){
     		try {
-    			Context initCtx = new InitialContext();  
-    			DataSource ds =(DataSource)initCtx.lookup("java:comp/env/jdbc/MuBian");  
-                connection = ds.getConnection();
+    			Class.forName("com.mysql.jdbc.Driver").newInstance();
+    			Connection connection = java.sql.DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mubian", 
+    					"root", "greatwqs");
                 return connection;
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -56,7 +52,7 @@ public class MySqlConnection {
      */
     public ResultSet getQuery(String sql){
     	try{
-    		return getConnectionJndi().createStatement().executeQuery(sql);
+    		return getConnection().createStatement().executeQuery(sql);
     	} catch(Exception exp){
     		exp.printStackTrace();
     	}
@@ -69,7 +65,7 @@ public class MySqlConnection {
      */
     public void executeUpdate(String sql){
     	try{
-    		getConnectionJndi().createStatement().executeUpdate(sql);
+    		getConnection().createStatement().executeUpdate(sql);
     	} catch(Exception exp){
     		exp.printStackTrace();
     	}

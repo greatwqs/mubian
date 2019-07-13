@@ -20,12 +20,12 @@ sourceSets.test.java.srcDir 'src/test/java'
 repositories {
    mavenLocal()
    maven {
-      credentials {
-         username 'admin'
-         password 'yunyao@nexus4support'
-      }
-      url "http://120.26.127.211:8081/nexus/content/groups/public/"
-   }
+        //spring的那个打不开了
+        url "https://maven.aliyun.com/nexus/content/groups/public/"
+        url "https://mvnrepo.tae.taobao.com/content/groups/public"
+        url "http://repo1.maven.org/maven2"
+        // url "http://maven.oschina.net/content/groups/public/"
+    }
    mavenCentral()
 }
 
